@@ -10,32 +10,48 @@ function computerPlay(){
     } 
 } 
 
-function playRound(playerSelection, computerSelection){
-    console.log("PLAYER: " + playerSelection);
-    console.log("COM: " + computerSelection);
-
+function playRound(e){
     let winner = "";
+    let playerSelection  = "";
+    let computerSelection = computerPlay();
+
+    const container = document.querySelector('#container')
+    const content1 = document.querySelector('.currentScore')
+    const content2 = document.querySelector('.roundResults')
+    
+    if(e.target.id == "rock") playerSelection = "rock";
+    else if (e.target.id == "paper") playerSelection = "paper";
+    else if (e.target.id == "scissors") playerSelection = "scissors";
+
+    content2.textContent =`PLAYER chose ${playerSelection.toUpperCase()}. COM chose ${computerSelection.toUpperCase()}. `;
 
     if((playerSelection === "rock") && (computerSelection === "scissors")){
         console.log("You win! Rock beats scissors!");
+        content2.textContent += "You win! Rock beats scissors!";
         winner = "player";
     } else if ((playerSelection === "rock") && (computerSelection === "paper")){
         console.log("You lose! Paper beats rock!");
+        content2.textContent += "You lose! Paper beats rock!";
         winner = "computer";
     } else if ((playerSelection === "scissors") && (computerSelection === "rock")){
-        console.log("You lose! Rock beats scissors!")
+        console.log("You lose! Rock beats scissors!");
+        content2.textContent += "You lose! Rock beats scissors!";
         winner = "computer";
     } else if ((playerSelection === "scissors") && (computerSelection === "paper")){
         console.log("You win! Scissors beats paper!");
+        content2.textContent += "You win! Scissors beats paper!";
         winner = "player";
     } else if ((playerSelection === "paper") && (computerSelection === "rock")){
         console.log("You win! Paper beats rocks!");
+        content2.textContent += "You win! Paper beats rocks!";
         winner = "player";
     } else if ((playerSelection === "paper") && (computerSelection === "scissors")){
         console.log("You lose! Scissors beats paper!");
+        content2.textContent += "You lose! Scissors beats paper!";
         winner = "computer";
     } else {
         console.log("Tie! Both players selected the same item!");
+        content2.textContent += "Tie! Both players selected the same item!";
         winner = "none";
     }
 
@@ -47,16 +63,14 @@ function game(){
     let computerScore = 0;
     let winner = "";
 
-    for(let i = 0; i < 5; i++){
-        playerSelection = prompt("Please enter your choice (rock,paper, or scissors)").toLowerCase();
-        computerSelection = computerPlay();
-        winner = playRound(playerSelection,computerSelection);
+    //for(let i = 0; i < 5; i++){
+        winner = playRound();
         if(winner === "player"){
             playerScore++;
         } else if (winner === "computer") {
             computerScore++;
         }
-    }
+    //}
 
     if(playerScore > computerScore){
         console.log(`The PLAYER wins! The final score is ${playerScore}-${computerScore}.`);
@@ -67,6 +81,8 @@ function game(){
     }
 }
 
-// console.log(playRound(playerSelection,computerSelection)); // To test first 2 funcs
-
-game();
+const buttons = document.querySelectorAll('button');
+// Iterate through each button and add a 'click' listener
+buttons.forEach((button) => { 
+    button.addEventListener('click', playRound);
+});
