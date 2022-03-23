@@ -4,18 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <script src="javascript.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
     <title>Rock Paper Scissors</title>
 </head>
 
 <body>
+    <h1>Rock Paper Scissors</h1>
+    <p class="gameDesc">
+        In rock-paper-scissors, two players will each randomly choose one of three hand signs: rock, paper, or scissors. Both players show their signs at the same time to see who will win. Here are the rules that determine which sign beats another: Rock wins over scissors (because rock smashes scissors). Scissors wins over paper (because scissors cut paper) Paper wins over rock (because paper covers rock). Play against a computer by clicking one of the three buttons below.
+    </p>
     <div class="selections">
         <button id="rock">Rock</button>
         <button id="paper">Paper</button>
         <button id="scissors">Scissors</button>
     </div>
     <div id="container">
+        <h1 class="roundDisplay"></h1>
+        <p class="playerChoice"></p>
+        <p class="computerChoice"></p>
+        <p class="roundResult"></p>
         <p class="currentScore"></p>
-        <p class="roundResults"></p>
     </div>
 </body>
 

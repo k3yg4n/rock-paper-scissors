@@ -1,0 +1,25 @@
+body{
+    display:flex;
+    flex-direction:column;
+    width:90%;
+    align-items:center;
+}
+
+.selections{
+    width:100%;
+    display:flex;
+    justify-content:space-around;
+}
+
+
+#container{
+    width:100%;
+    text-align:center;
+}
+
+#container p{
+    display:block;
+}
+
+
+
