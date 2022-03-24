@@ -1,8 +1,60 @@
 body{
     display:flex;
     flex-direction:column;
-    width:90%;
+    width:100%;
+    height:1300px;
     align-items:center;
+    background-image:url(./images/background1.jpg);
+    background-size:cover;
+    padding:0px;
+    margin:10px;
+}
+
+body h1{
+    font-size:5em;
+}
+
+body h2{
+    font-size:4em;
+}
+
+.introduction{
+    display:flex;
+    justify-content:space-around;
+    padding-bottom:50px;
+}
+
+.introduction img{
+    width:50%;
+}
+
+.introText{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    width:40%;
+}
+
+.gameDesc,
+.instructions{
+    font-size:20px;
+}
+
+.instructions{
+    font-weight:bold;
+    font-style:italic;
+}
+
+.selectionImages{
+    display:flex;
+    justify-content:space-around;
+    margin: 30px 0px;
+}
+
+.selectionImages img{
+    width:20%;
+    height:auto;
 }
 
 .selections{
@@ -11,15 +63,45 @@ body{
     justify-content:space-around;
 }
 
+.selections button{
+  background-image: linear-gradient(1deg, #4F58FD, #149BF3 99%);
+  color: #FFFFFF;
+  border-radius: 100px;
+  border-width: 0;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 6px 20px;
+}
+
 
 #container{
     width:100%;
     text-align:center;
 }
 
+#container .roundDisplay{
+    padding: none;
+    margin:50px 0px 30px 0px;
+}
+
 #container p{
     display:block;
+    font-size:20px;
 }
+
+#container .finalResult{
+    font-size:25px;
+    display:flex;
+    flex-direction:column;
+}
+
+#container .finalResult img{
+    width:100px;
+    height:auto;
+    align-items:center;
+    justify-content: center;
+}
+
 
 
 

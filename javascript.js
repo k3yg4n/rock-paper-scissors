@@ -48,18 +48,21 @@ function playGame(e){
     currentScore.textContent = `PLAYER: ${playerScore} \t COMPUTER: ${computerScore}`;
 
     if(currentRound == 5) {
-        const finalResult = document.createElement('h4');
-
+        let image = document.createElement('img');
         if(playerScore > computerScore){
             finalResult.textContent = `The PLAYER wins! The final score is ${playerScore}-${computerScore}.`;
+            image.src = './images/winner.png';
         } else if(computerScore > playerScore) {
             finalResult.textContent = `The COMPUTER wins! The final score is ${computerScore}-${playerScore}.`;
+            image.src = './images/loser.jpg';
         } else {
             finalResult.textContent = `The game was a tie with a final score of ${computerScore}-${playerScore}.`;
+            image.src = './images/tie.gif';
         }
 
-        container.appendChild(finalResult);
-
+        image.setAttribute('height', '250');
+        container.appendChild(image);
+        
         buttons.forEach((button) => { 
             button.removeEventListener('click', playGame); // Iterate through each button and add a 'click' listener
         });
@@ -68,10 +71,7 @@ function playGame(e){
     currentRound++;
 }
 
-
-
-
-///////////////////////////////  MAIN /////////////////////////////////////
+///////////////////////////////  MAIN  /////////////////////////////////////
 let playerScore = 0;
 let computerScore = 0;
 let currentRound = 1;
@@ -82,6 +82,7 @@ const playerChoice = document.querySelector('.playerChoice')
 const computerChoice = document.querySelector('.computerChoice')
 const roundResult = document.querySelector('.roundResult')
 const currentScore = document.querySelector('.currentScore')
+const finalResult = document.querySelector('.finalResult');
 
 const buttons = document.querySelectorAll('button');
 buttons.forEach((button) => { 

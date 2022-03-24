@@ -10,20 +10,34 @@
 
 <body>
     <h1>Rock Paper Scissors</h1>
-    <p class="gameDesc">
-        In rock-paper-scissors, two players will each randomly choose one of three hand signs: rock, paper, or scissors. Both players show their signs at the same time to see who will win. Here are the rules that determine which sign beats another: Rock wins over scissors (because rock smashes scissors). Scissors wins over paper (because scissors cut paper) Paper wins over rock (because paper covers rock). Play against a computer by clicking one of the three buttons below.
-    </p>
+    <div class="introduction">
+        <img src="./images/rock-paper-scissors-items.png">
+        <div class="introText">
+            <p class="gameDesc">
+                In rock-paper-scissors, two players will each randomly choose one of three hand signs: rock, paper, or scissors. Both players show their signs at the same time to see who will win. Here are the rules that determine which sign beats another: Rock wins over scissors (because rock smashes scissors). Scissors wins over paper (because scissors cut paper) Paper wins over rock (because paper covers rock). 
+            </p>
+            <p class="instructions">
+                Play against a computer TO THE DEATH for 5 grueling rounds by clicking one of the three buttons below.
+            </p>
+        </div>
+    </div>
+    <div class="selectionImages">
+        <img src="./images/rock.jpg">
+        <img src="./images/paper.jpg">
+        <img src="./images/scissors.webp">
+    </div>
     <div class="selections">
         <button id="rock">Rock</button>
         <button id="paper">Paper</button>
         <button id="scissors">Scissors</button>
     </div>
     <div id="container">
-        <h1 class="roundDisplay"></h1>
+        <h2 class="roundDisplay"></h1>
         <p class="playerChoice"></p>
         <p class="computerChoice"></p>
         <p class="roundResult"></p>
         <p class="currentScore"></p>
+        <h4 class="finalResult"></h4>
     </div>
 </body>
 
